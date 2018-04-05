@@ -19,19 +19,19 @@ if ($conn->connect_error) {
 	if(isset($_POST["submit"])){
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
 		$sql = sprintf("INSERT INTO `Item`(`name`, `price`, `Category_idCategory`, `standardShipping`, `standardCost`) VALUES ('%s', '%s', '%s', '%s', '%s')",
-		$tilkobling->real_escape_string($_POST["itemName"]),
-		$tilkobling->real_escape_string($_POST["itemPrice"]),
-		$tilkobling->real_escape_string($_POST["selectCategory"]),
-		$tilkobling->real_escape_string($_POST["itemShipping"]),
-		$tilkobling->real_escape_string($_POST["itemCost"]));
-		$tilkobling->query($sql);
+		$conn->real_escape_string($_POST["itemName"]),
+		$conn->real_escape_string($_POST["itemPrice"]),
+		$conn->real_escape_string($_POST["selectCategory"]),
+		$conn->real_escape_string($_POST["itemShipping"]),
+		$conn->real_escape_string($_POST["itemCost"]));
+		$conn->query($sql);
 
 		//header('Location:index.php');?id='.$tilkobling->insert_id);
 		//Add success message
 	}
 
 	$sql= "SELECT * FROM `projects`";
-	$datasett= $tilkobling-> query($sql);
+	$datasett= $conn-> query($sql);
 
 ?>
 

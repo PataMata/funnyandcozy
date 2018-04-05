@@ -19,8 +19,8 @@ if ($conn->connect_error) {
 	if(isset($_POST["submit"])){
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
 		$sql = sprintf("INSERT INTO `Category`(`name`) VALUES ('%s')",
-		$tilkobling->real_escape_string($_POST["categoryName"]));
-		$tilkobling->query($sql);
+		$conn->real_escape_string($_POST["categoryName"]));
+		$conn->query($sql);
 
 		header('Location:items.php');//?id='.$tilkobling->insert_id);
 	}
