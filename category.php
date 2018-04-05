@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
 		$sql = sprintf("INSERT INTO `Category`(`name`) VALUES ('%s')",
 		$conn->real_escape_string($_POST["categoryName"]));
-		if ($conn->mysql_query("INSERT INTO PEOPLE (NAME ) VALUES ('COLE')") {
+		if (mysql_query("INSERT INTO PEOPLE (NAME ) VALUES ('COLE')") {
 		  echo '<br /><br /><br /><br /><br />Success';
 		} else {
 		  echo '<br /><br /><br /><br /><br />Fail';
