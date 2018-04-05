@@ -36,8 +36,8 @@ echo "Connected successfully";
 
 
  <body data-spy="scroll" data-target=".navbar-collapse">
- 
- <div class="navbar navbar-default navbar-fixed-top">
+
+  <div class="navbar navbar-default navbar-fixed-top">
  <div class="container">
  	 	 <div class="navbar-header">
  	 	 	 <button class="navbar-toggle" data-toggle="collapse" datatarget=".navbar-collapse">
@@ -118,8 +118,8 @@ echo "Connected successfully";
  	 	 <h2><span class="glyphicon glyphicon-pencil"></span> Åpningstiden</h2>
  	 	 <p>Når er vi åpent?</p>
  	 	 <a class="btn btn-success marginTop" href="apningstider.php">Åpningstider</a>
- 	 	 	-->
- 	 	 </div>
+ 	 	 	
+ 	 	 </div>-->
  	 	
  </div>
  </div>

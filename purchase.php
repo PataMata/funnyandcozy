@@ -50,7 +50,7 @@ echo "Connected successfully";
  	 	 	
  	 	 <div class="collapse navbar-collapse">
  	 	 	 <ul class="nav navbar-nav">	 	
- 	 	 	 	 <li><a href="#topContainer">Home</a></li>
+ 	 	 	 	 <li><a href="index.php">Home</a></li>
  	 	 	 	 <li><a href="items.php">Items</a></li>
  	 	 	 	 <li><a href="sales.php">Sales</a></li>
  	 	 	 	 <li class="active"><a href="purchase.php">Purchase</a></li>
@@ -118,8 +118,8 @@ echo "Connected successfully";
  	 	 <h2><span class="glyphicon glyphicon-pencil"></span> Åpningstiden</h2>
  	 	 <p>Når er vi åpent?</p>
  	 	 <a class="btn btn-success marginTop" href="apningstider.php">Åpningstider</a>
- 	 	 	-->
- 	 	 </div>
+ 	 	 	
+ 	 	 </div>-->
  	 	
  </div>
  </div>

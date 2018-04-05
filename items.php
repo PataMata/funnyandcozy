@@ -11,7 +11,28 @@ $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-echo "Connected successfully";
+//echo "Connected successfully";
+
+
+
+
+	if(isset($_POST["submit"])){
+		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
+		$sql = sprintf("INSERT INTO `Item`(`name`, `price`, `Category_idCategory`, `standardShipping`, `standardCost`) VALUES ('%s', '%s', '%s', '%s', '%s')",
+		$tilkobling->real_escape_string($_POST["itemName"]),
+		$tilkobling->real_escape_string($_POST["itemPrice"]),
+		$tilkobling->real_escape_string($_POST["selectCategory"]),
+		$tilkobling->real_escape_string($_POST["itemShipping"]),
+		$tilkobling->real_escape_string($_POST["itemCost"]));
+		$tilkobling->query($sql);
+
+		//header('Location:index.php');?id='.$tilkobling->insert_id);
+		//Add success message
+	}
+
+	$sql= "SELECT * FROM `projects`";
+	$datasett= $tilkobling-> query($sql);
+
 ?>
 
 <!doctype html>
@@ -50,7 +71,7 @@ echo "Connected successfully";
  	 	 	
  	 	 <div class="collapse navbar-collapse">
  	 	 	 <ul class="nav navbar-nav">	 	
- 	 	 	 	 <li><a href="#topContainer">Home</a></li>
+ 	 	 	 	 <li><a href="index.php">Home</a></li>
  	 	 	 	 <li class="active"><a href="items.php">Items</a></li>
  	 	 	 	 <li><a href="sales.php">Sales</a></li>
  	 	 	 	 <li><a href="purchase.php">Purchase</a></li>
@@ -66,22 +87,34 @@ echo "Connected successfully";
 
  <div class="container contentContainer" id="topContainer" >
 
- <div class="row" style="margin-top: 100px; height:750px; background:transparent url('bak.jpg') no-repeat center center /cover">
+ <div class="row" style="margin-top: 100px; height:750px;">
 
  	 	
- 	 	 <div class="col-md-6 col-md-offset-3" id="topRow" style="margin-top: 100px;">
+ 	 	 <div class="form-group" id="topRow" style="margin-top: 100px;">
  	 	 	
- 	 	 	
- 	 	 <p class="lead">Hi, your project xx has made/lost: x$</p>
- 	 	 	
- 	 	 <p style="font-size: 150%;">Income: x $ <br/>
- 	 	 	Expense: x $<br/>
- 	 	 	Sum: x $</p>
- 	 	 	
- 	 	 <a class="bold marginTop" href="todo.php">Log or todo?</a>
- 	 	 	
- 	 	 	
- 	 	 	
+			<form id="form1" name="form1" method="post">  
+ 	 	 	  	<label for="itemName">Name</label>
+    			<input type="text" class="form-control" id="itemName" aria-describedby="itemName" placeholder="Product Name">
+ 				
+ 	 	 	  	<label for="itemPrice">Price</label>
+    			<input type="number" class="form-control" id="itemPrice" aria-describedby="itemPrice" > <br />
+
+ 	 	 	  	<label for="itemShipping">Normal shipping price</label>
+    			<input type="number" class="form-control" id="itemShipping" aria-describedby="itemShipping"><br />
+
+ 	 	 	  	<label for="itemCost">Normal price for product</label>
+    			<input type="number" class="form-control" id="itemCost" aria-describedby="itemCost" > <br />
+
+ 	 	 	  	<label for="selectCategory">Category <a href="category.php">Add a new category</a></label>
+	            <select name="selectCategory" id="selectCategory" class="form-control">
+	            <option value="---">---Category---</option>
+	            <?php while($rad = mysqli_fetch_array($datasett)) {?> 
+	            	<option value="<?php echo $rad["idCategory"];?>"><?php echo $rad["name"];?></option> 
+	            <?php }?> 
+	            </select> <br />
+
+  				<button type="submit" name="submit" id="submit" class="btn btn-primary" placeholder="Amount">Submit</button>
+ 	 	 	</form>
  	 	 </div>
  	 	
  	 	
@@ -90,66 +123,14 @@ echo "Connected successfully";
  </div>
 
 
- <div class="container contentContainer" id="details">
-<!--
- <div class="row" class="center">
- 	 	
- 	 	 <h1 class="center title">Hvorfor er vi best?</h1>
- 	 	
- </div>
- 	 	-->
- <div class="row marginBottom">
- 	 	
- 	 	 <div class="col-md-7 marginTop">
- 	 	 <h2><span class="glyphicon"></span> Link</h2>
- 	 	 <p>Penger denne måneden.</p>
- 	 	 <a class="btn btn-success marginTop" href="months.php">$$$</a>
- 	 	 	
- 	 	 </div>
- 	 	 	
- 	 	 <div class="col-md-7 marginTop">
- 	 	 <h2><span class="glyphicon glyphicon-off"></span> Sales</h2>
- 	 	 <p>Total sales.</p>
- 	 	 <a class="btn btn-success marginTop" href="sales.php">Test</a>
- 	 	 	
- 	 	 </div>
- 	 	 	<!--
- 	 	 <div class="col-md-4 marginTop">
- 	 	 <h2><span class="glyphicon glyphicon-pencil"></span> Åpningstiden</h2>
- 	 	 <p>Når er vi åpent?</p>
- 	 	 <a class="btn btn-success marginTop" href="apningstider.php">Åpningstider</a>
- 	 	 	-->
- 	 	 </div>
- 	 	
- </div>
- </div>
-<!--
- <div class="container contentContainer" id="footer">
-
- <div class="row">
- 	 	
- 	 	 <h1 class="center title">Meld deg på et kurs</h1>
- 	 	
- 	 	 <a class="lead center" href="paamelding.php">Lær deg å klatre med hjelp av våre instruktører</p>
- 	 	 	
- 	 	
- </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
 
- </div>-->
-
- <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/
-jquery.min.js"></script>
- <!-- Include all compiled plugins (below), or include individual files as
-needed -->
- <script src="js/bootstrap.min.js"></script>
-
- <script>
-
- $(".contentContainer").css("min-height",$(window).height());
- 
- </script>
  </body>
 </html>
 </html>
