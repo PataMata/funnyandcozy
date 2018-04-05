@@ -20,7 +20,11 @@ if ($conn->connect_error) {
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
 		$sql = sprintf("INSERT INTO `Category`(`name`) VALUES ('%s')",
 		$conn->real_escape_string($_POST["categoryName"]));
-		$conn->query($sql);
+		if ($conn->mysql_query("INSERT INTO PEOPLE (NAME ) VALUES ('COLE')") {
+		  echo '<br /><br /><br /><br /><br />Success';
+		} else {
+		  echo '<br /><br /><br /><br /><br />Fail';
+		} 
 
 		header('Location:items.php');//?id='.$tilkobling->insert_id);
 	}
@@ -65,7 +69,7 @@ if ($conn->connect_error) {
  	 	 <div class="collapse navbar-collapse">
  	 	 	 <ul class="nav navbar-nav">	 	
  	 	 	 	 <li><a href="index.php">Home</a></li>
- 	 	 	 	 <li class="active"><a href="items.php">Items</a></li>
+ 	 	 	 	 <li><a href="items.php">Items</a></li>
  	 	 	 	 <li><a href="sales.php">Sales</a></li>
  	 	 	 	 <li><a href="purchase.php">Purchase</a></li>
  	 	 	 	 <li><a href="monthlyFee.php">Monthly fees</a></li>

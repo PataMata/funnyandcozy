@@ -113,7 +113,7 @@ if ($conn->connect_error) {
 	            <?php }?> 
 	            </select> <br />
 
-  				<button type="submit" name="submit" id="submit" class="btn btn-primary" placeholder="Amount">Submit</button>
+  				<button type="submit" name="submit" id="submit" class="btn btn-primary" placeholder="Add">Add</button>
  	 	 	</form>
  	 	 </div>
  	 	
