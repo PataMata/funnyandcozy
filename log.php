@@ -50,12 +50,12 @@ echo "Connected successfully";
  	 	 	
  	 	 <div class="collapse navbar-collapse">
  	 	 	 <ul class="nav navbar-nav">	 	
- 	 	 	 	 <li class="active"><a href="#topContainer">Home</a></li>
+ 	 	 	 	 <li><a href="#topContainer">Home</a></li>
  	 	 	 	 <li><a href="items.php">Items</a></li>
  	 	 	 	 <li><a href="sales.php">Sales</a></li>
  	 	 	 	 <li><a href="purchase.php">Purchase</a></li>
  	 	 	 	 <li><a href="monthlyFee.php">Monthly fees</a></li>
- 	 	 	 	 <li><a href="log.php">Log</a></li>
+ 	 	 	 	 <li class="active"><a href="log.php">Log</a></li>
  	 	 	 	 <li><a href="months.php">Months</a></li>
  	 	 	 </ul>
  	 	 </div>
