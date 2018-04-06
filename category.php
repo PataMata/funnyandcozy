@@ -1,6 +1,6 @@
 <?php
 
-include('connection.php');
+include 'connection.php';
 
 // Check connection
 if ($conn->connect_error) {
@@ -16,11 +16,11 @@ if ($conn->connect_error) {
 		$sql = sprintf("INSERT INTO `Category`(`name`) VALUES ('%s')",
 		$conn->real_escape_string($_POST["categoryName"]));
 		$conn->query($sql);
-		if (mysql_query("INSERT INTO PEOPLE (NAME ) VALUES ('COLE')") {
+		/*if (mysql_query("INSERT INTO PEOPLE (NAME ) VALUES ('COLE')") {
 		  echo 'Success';
 		} else {
 		  echo 'Fail';
-		} 
+		} */
 
 		header('Location:items.php');//?id='.$tilkobling->insert_id);
 	}
