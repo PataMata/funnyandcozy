@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+global $conn;
 
 	if(isset($_POST["submit"])){
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);

@@ -1,6 +1,7 @@
 <?php
 
 include 'connection.php';
+global $conn;
 
 // Check connection
 if ($conn->connect_error) {

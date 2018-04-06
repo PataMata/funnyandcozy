@@ -11,7 +11,7 @@ $conn = mysql_connect($servername, $username, $password);
 if ($conn->connect_error) {
     echo("Connection failed: " . $conn->connect_error);
 } else {
-	echo "DB Connection succesfull";
+	//echo "DB Connection succesful";
 }
 
 ini_set('display_errors', 1);
