@@ -12,7 +12,13 @@ if ($conn->connect_error) {
 } 
 //echo "Connected successfully";
 
+if (!mysqli_query($con,"INSERT INTO Category (name) VALUES ('Kitchen')")){
+	echo("Error description: " . mysqli_error($con));
+}
 
+mysqli_close($con);
+
+/*
 
 
 	if(isset($_POST["submit"])){
@@ -24,12 +30,12 @@ if ($conn->connect_error) {
 		if($result){
 			echo "<br /><br /><br /><br /><br /><br /><br />Inserted";
 		} else {
-			echo "<br /><br /><br /><br /><br /><br /><br />Not inserted".mysqli_connect_error();			
+			echo "<br /><br /><br /><br /><br /><br /><br />Not inserted" . $conn->;			
 		}
 
 		header('Location:items.php');//?id='.$tilkobling->insert_id);
 	}
-
+*/
 
 ?>
 
