@@ -13,4 +13,6 @@ if ($conn->connect_error) {
 } else {
 	echo "DB Connection succesfull";
 }
+
+ini_set('display_errors', 1);
 ?> 

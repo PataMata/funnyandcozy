@@ -18,6 +18,8 @@ include 'connection.php';
 	$sql= "SELECT * FROM `projects`";
 	$datasett= $conn-> query($sql);
 
+	ini_set('display_errors', 1);
+
 ?>
 
 <!doctype html>
