@@ -1,11 +1,6 @@
 <?php
 
-$servername = "den1.mysql6.gear.host";
-$username = "funnyandcozy1";
-$password = "Tl9NR_5u_30v";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+include('connection.php');
 
 // Check connection
 if ($conn->connect_error) {
@@ -20,10 +15,11 @@ if ($conn->connect_error) {
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
 		$sql = sprintf("INSERT INTO `Category`(`name`) VALUES ('%s')",
 		$conn->real_escape_string($_POST["categoryName"]));
+		$conn->query($sql);
 		if (mysql_query("INSERT INTO PEOPLE (NAME ) VALUES ('COLE')") {
-		  echo '<br /><br /><br /><br /><br />Success';
+		  echo 'Success';
 		} else {
-		  echo '<br /><br /><br /><br /><br />Fail';
+		  echo 'Fail';
 		} 
 
 		header('Location:items.php');//?id='.$tilkobling->insert_id);
