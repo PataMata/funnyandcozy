@@ -18,13 +18,13 @@ if ($conn->connect_error) {
 	if(isset($_POST["submit"])){
 		$catName = $conn->real_escape_string($_POST["categoryName"]);
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
-		$sql = sprintf("INSERT INTO `Category`(`name`) VALUES ('"+$catName+"')";
+		$sql = sprintf("INSERT INTO `Category`(`name`) VALUES ('".$catName."')";
 		$result = $conn->query($sql);
 
 		if($result){
 			echo "<br /><br /><br /><br /><br /><br /><br />Inserted";
 		} else {
-			echo "<br /><br /><br /><br /><br /><br /><br />Not inserted" + mysqli_connect_error();			
+			echo "<br /><br /><br /><br /><br /><br /><br />Not inserted".mysqli_connect_error();			
 		}
 
 		header('Location:items.php');//?id='.$tilkobling->insert_id);
