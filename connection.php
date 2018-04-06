@@ -4,7 +4,7 @@ $servername = "den1.mysql6.gear.host";
 $username = "funnyandcozy1";
 $password = "Tl9NR_5u_30v";
 
-$conn = mysql_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password);
 //mysql_select_db("funnyandcozy1") or die(mysql_error());
 
 // Check connection

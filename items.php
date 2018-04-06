@@ -1,6 +1,10 @@
 <?php
-include 'connection.php';
-global $conn;
+
+$servername = "den1.mysql6.gear.host";
+$username = "funnyandcozy1";
+$password = "Tl9NR_5u_30v";
+
+$conn = mysqli_connect($servername, $username, $password);
 
 	if(isset($_POST["submit"])){
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
@@ -17,7 +21,7 @@ global $conn;
 	}
 
 	$sql= "SELECT * FROM `projects`";
-	$datasett= $conn-> query($sql);
+	$datasett = $conn->query($sql);
 
 	ini_set('display_errors', 1);
 

@@ -1,7 +1,10 @@
 <?php
 
-include 'connection.php';
-global $conn;
+$servername = "den1.mysql6.gear.host";
+$username = "funnyandcozy1";
+$password = "Tl9NR_5u_30v";
+
+$conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
 if ($conn->connect_error) {
