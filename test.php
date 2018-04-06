@@ -6,7 +6,7 @@ $password = "Tl9NR_5u_30v";
 
 $conn = mysqli_connect($servername, $username, $password);
 
-	$sql= "SELECT * FROM `category`";
+	$sql= "SELECT * FROM `Category`";
 	$datasett = $conn->query($sql);
 
 	ini_set('display_errors', 1);
