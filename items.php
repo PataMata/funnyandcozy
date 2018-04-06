@@ -5,7 +5,6 @@ $username = "funnyandcozy1";
 $password = "Tl9NR_5u_30v";
 
 $conn = mysqli_connect($servername, $username, $password);
-
 	if(isset($_POST["submit"])){
 		//echo "<br /></br /></br /></br />".$tilkobling->real_escape_string($_POST["selectDel"]);
 		$sql = sprintf("INSERT INTO `Item`(`name`, `price`, `Category_idCategory`, `standardShipping`, `standardCost`) VALUES ('%s', '%s', '%s', '%s', '%s')",
@@ -20,7 +19,7 @@ $conn = mysqli_connect($servername, $username, $password);
 		//Add success message
 	}
 
-	$sql= "SELECT * FROM `projects`";
+	$sql= "SELECT * FROM `category`";
 	$datasett = $conn->query($sql);
 
 	ini_set('display_errors', 1);
