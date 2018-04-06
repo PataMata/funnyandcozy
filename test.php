@@ -12,9 +12,10 @@ $conn = mysqli_connect($servername, $username, $password);
 	ini_set('display_errors', 1);
 
 	while($rad = mysqli_fetch_array($datasett)) {
-	    echo $rad["idCategory"];
-	    if($rad == ""){
+	    if(!$rad){
 	    	echo "No input here";
+	    } else {
+	    	echo $rad["name"];
 	    }
 	}
 
