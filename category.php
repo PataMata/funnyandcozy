@@ -3,8 +3,9 @@
 $servername = "den1.mysql6.gear.host";
 $username = "funnyandcozy1";
 $password = "Tl9NR_5u_30v";
+$myDb = "funnyandcozy1";
 
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password, $myDb);
 
 // Check connection
 if ($conn->connect_error) {
