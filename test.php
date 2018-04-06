@@ -13,7 +13,8 @@ $conn = mysqli_connect($servername, $username, $password);
 
 	while($rad = mysqli_fetch_array($datasett)) {
 	    if(!$rad){
-	    	echo "No input here";
+	    	//echo "No input here";
+    		printf("Error: %s\n", mysqli_error($con));
 	    } else {
 	    	echo $rad["name"];
 	    }
